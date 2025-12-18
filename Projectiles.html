@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mountain Climbing Guide</title>
+
+    <link rel="stylesheet" href="Mountain.CSS">
+
+    <!-- BOOTSTRAP + JQUERY -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- AOS Animations -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark p-3 sticky-top">
+    <div class="container-fluid">
+        <a class="navbar-brand fw-bold" href="#">SUMMIT QUEST</a>
+
+        <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="nav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a href="#mountains" class="nav-link">Mountains</a></li>
+                <li class="nav-item"><a href="#gallery" class="nav-link">Gallery</a></li>
+                <li class="nav-item"><a href="#map" class="nav-link">Map</a></li>
+            </ul>
+            <button id="darkToggle" class="btn btn-outline-light ms-4">Dark Mode</button>
+        </div>
+    </div>
+</nav>
+
+<!-- HEADER -->
+<div class="header">
+  <video autoplay muted loop class="header-video">
+    <source src="backgroundviddo.mp4" type="video/mp4">
+  </video>
+  <h1 class="display-4 fw-bold">Born Below, Meant for Above</h1>
+</div>
+
+<div class="container py-5">
+
+    <!-- PHILIPPINE MOUNTAINS -->
+<h2 id="mountains" class="mb-4">Philippine Mountains</h2>
+
+<div class="row g-4">
+
+    <!-- SELECTION MENU -->
+    <div class="col-12 mountain-menu">
+        <div class="mountain-btn" data-mountain="Apo">
+            <div class="mountain-shape"></div>
+            <span>Mt. Apo</span>
+        </div>
+
+        <div class="mountain-btn" data-mountain="Pulag">
+            <div class="mountain-shape"></div>
+            <span>Mt. Pulag</span>
+        </div>
+
+        <div class="mountain-btn" data-mountain="Mayon">
+            <div class="mountain-shape"></div>
+            <span>Mt. Mayon</span>
+        </div>
+    </div>
+
+    <!-- IMAGE PANEL -->
+    <div class="col-12 mountain-display fade" id="mountainDisplay">
+        <span id="closeMountain">&times;</span>
+        <img id="mountainImage" class="img-fluid rounded" />
+    </div>
+
+    <!-- MOUNTAIN CARDS -->
+    <div class="col-md-4" data-aos="fade-right">
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-front">
+                    <h5>Mount Apo</h5>
+                    <p>“Grandfather of Philippine Mountains. Highest at 2,954m.”</p>
+                    <div class="difficulty-hard">★★★★★ (Hard + Tip)</div>
+                </div>
+                <div class="card-back">
+                    <p>“Requires good endurance. Rich biodiversity, home of the Philippine eagle. Best months: March–April.”</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4" data-aos="fade-up">
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-front">
+                    <h5>Mount Mayon</h5>
+                    <p>“World’s most symmetric volcano, iconic 'perfect cone.'”</p>
+                    <div class="difficulty-hard">★★★★★ (Hard + Tip)</div>
+                </div>
+                <div class="card-back">
+                    <p>“Highly active volcano. Treks are seasonal; always follow PHIVOLCS advisories.”</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4" data-aos="fade-left">
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-front">
+                    <h5>Mount Pulag</h5>
+                    <p>“Famous for its Sea of Clouds and golden grasslands.”</p>
+                    <div class="difficulty-medium">★★★★☆ (Medium)</div>
+                </div>
+                <div class="card-back">
+                    <p>Temperatures can drop below 0°C. Acclimate slowly; altitude sickness is common.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+     </div>
+	      </div>
+
+
+<!-- GALLERY -->
+<div class="container mt-5">
+    <h2 id="gallery" class="mb-4">Mountain Gallery</h2>
+    <div class="flipbook-wrapper" data-aos="fade-up"></div>
+</div>
+
+<div class="flipbook-wrapper" data-aos="fade-up">
+    <div class="flipbook" id="flipbook">
+
+        <div class="flipbook-page" data-type="image" data-src="apo.jpg">
+            <img src="apo.jpg" alt="Mount Apo">
+            <div class="page-caption">
+                <h3>Mountain Apo</h3>
+                <p>The tripartite border of Davao City, Davao del Sur, and Cotabato</p>
+            </div>
+        </div>
+
+        <div class="flipbook-page" data-type="image" data-src="mayon.jpg">
+            <img src="mayon.jpg" alt="Mount Mayon">
+            <div class="page-caption">
+                <h3>Mountain Mayon</h3>
+                <p>The province of Albay in Bicol, Philippines</p>
+            </div>
+        </div>
+
+        <div class="flipbook-page" data-type="image" data-src="pulag.jpg">
+            <img src="pulag.jpg" alt="Mount Pulag">
+            <div class="page-caption">
+                <h3>Mountain Pulag</h3>
+                <p>The triple border of Benguet, Ifugao, and Nueva Vizcaya</p>
+            </div>
+        </div>
+
+        <div class="flipbook-page" data-type="image" data-src="guiting.jpg">
+            <img src="guiting.jpg" alt="Mount Guiting-Guiting">
+            <div class="page-caption">
+                <h3>Mount Guiting-Guiting</h3>
+                <p>The highest mountain in Romblon, located on Sibuyan Island</p>
+            </div>
+        </div>
+
+        <div class="flipbook-page" data-type="image" data-src="arayat.jpg">
+            <img src="arayat.jpg" alt="Mount Arayat">
+            <div class="page-caption">
+                <h3>Mount Arayat</h3>
+                <p>A potentially active stratovolcano within the agricultural plains of Pampanga</p>
+            </div>
+        </div>
+
+        <div class="flipbook-page" data-type="image" data-src="halcon.jpg">
+            <img src="halcon.jpg" alt="Mount Halcon">
+            <div class="page-caption">
+                <h3>Mount Halcon</h3>
+                <p>The highest mountain in Mindoro — updated peakvisor data included</p>
+            </div>
+        </div>
+
+        <div class="flipbook-page" data-type="image" data-src="maikling.jpg">
+            <img src="maikling.jpg" alt="Mount Makiling">
+            <div class="page-caption">
+                <h3>Mount Makiling</h3>
+                <p>An inactive stratovolcano located in Laguna and Batangas, Luzon</p>
+            </div>
+        </div>
+
+    </div> 
+</div> 
+
+
+    <!-- DA CONTROLS R HEREE-->
+    <div class="flipbook-controls text-center mt-3">
+        <button id="prevPage" class="btn btn-outline-warning me-2">← Previous</button>
+        <button id="nextPage" class="btn btn-outline-warning">Next →</button>
+    </div>
+
+</div>
+
+
+<!-- MODAL FOR UHH FULL VIEW IMAGE THING -->
+<div class="modal fade" id="flipbookModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content bg-dark">
+            <img id="flipbookModalImage" class="img-fluid rounded d-none">
+            <video id="flipbookModalVideo" class="img-fluid rounded d-none" controls></video>
+        </div>
+    </div>
+</div>
+	
+	<section id="benefits" class="mountain-path-section">
+  <h2 class="section-title">What's Good About Mountain Climbing?</h2>
+  
+  <div class="mountain-path">
+    <!-- Marker 1 -->
+    <div class="path-item" data-aos="fade-right">
+      <img src="health.jpg" alt="Health & Fitness">
+      <div class="path-text">
+        <h3>Health & Fitness</h3>
+        <p>Climbing improves cardiovascular health, strengthens muscles, and boosts endurance. Nature exposure reduces stress and improves mental well-being.</p>
+      </div>
+    </div>
+
+    <!-- Marker 2 -->
+    <div class="path-item" data-aos="fade-left">
+      <img src="freedom.jpg" alt="Mental Clarity">
+      <div class="path-text">
+        <h3>Mental Clarity</h3>
+        <p>Being surrounded by nature helps improve focus, mindfulness, and creativity. Reaching a summit gives a sense of achievement and confidence.</p>
+      </div>
+    </div>
+
+    <!-- Marker 3 -->
+    <div class="path-item" data-aos="fade-right">
+      <img src="adventure.jpg" alt="Adventure & Exploration">
+      <div class="path-text">
+        <h3>Adventure & Exploration</h3>
+        <p>Mountain climbing lets you explore breathtaking landscapes, meet new people, and experience challenges that are thrilling and rewarding.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="equipment" class="mountain-path-section">
+  <h2 class="section-title">Essential Equipment</h2>
+
+  <div class="mountain-path">
+    <div class="path-item" data-aos="fade-left">
+      <img src="clothing.jpg" alt="Clothing & Footwear">
+      <div class="path-text">
+        <h3>Clothing & Footwear</h3>
+        <p>Layered clothing for temperature changes, waterproof jackets, thermal base layers, and durable hiking boots are must-haves for comfort and safety.</p>
+      </div>
+    </div>
+
+    <div class="path-item" data-aos="fade-right">
+      <img src="equipment.jpg" alt="Gear & Tools">
+      <div class="path-text">
+        <h3>Gear & Tools</h3>
+        <p>Backpack, trekking poles, gloves, headlamps, first aid kits, and navigation tools like maps or GPS are essential for longer climbs.</p>
+      </div>
+    </div>
+
+    <div class="path-item" data-aos="fade-left">
+      <img src="gears.jpg" alt="Safety Equipment">
+      <div class="path-text">
+        <h3>Safety Equipment</h3>
+        <p>Helmets, harnesses, ropes, and carabiners for technical climbs. Always prepare according to the difficulty level of the mountain.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="guides" class="mountain-path-section">
+  <h2 class="section-title">Guides & Tips</h2>
+
+  <div class="mountain-path">
+    <div class="path-item" data-aos="fade-right">
+      <img src="plan.jpg" alt="Plan Ahead">
+      <div class="path-text">
+        <h3>Plan Ahead</h3>
+        <p>Research the mountain, trail conditions, and weather. Prepare a route, know your timing, and inform someone about your trip.</p>
+      </div>
+    </div>
+
+    <div class="path-item" data-aos="fade-left">
+      <img src="respect.jpg" alt="Safety Tips">
+      <div class="path-text">
+        <h3>Stay Safe & Respect Nature</h3>
+        <p>Acclimate properly, follow trail rules, leave no trace, and be prepared for emergencies. Respect wildlife and local communities.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MAP -->
+<h2 id="map" class="mt-5 mb-3">Interactive Map</h2>
+
+<div class="map-wrapper" data-aos="zoom-in">
+    <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d16059.928741924866!2d125.26081843567548!3d6.987673729653888!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x32f3f72b2a06b4f7%3A0x9b66b88f7c3f83e3!2sMount%20Apo!5e0!3m2!1sen!2sph!4v1702399999999"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+    ></iframe>
+</div>
+
+<div class="text-center my-3">
+    <button onclick="window.scrollTo({top:0, behavior:'smooth'})" class="btn btn-outline-warning">
+        ↑ Back to Top
+    </button>
+</div>
+
+<footer class="text-center py-4">
+    <p>"The mountains are calling, and I must go." – John Muir</p>
+    <a href="gang.html" class="developer-link">© Summit Quest ™</a>
+</footer>
+
+
+
+<!-- SCRIPTS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script src="hehemountain.js"></script>
+
+</body>
+</html>
